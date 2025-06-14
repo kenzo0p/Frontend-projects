@@ -5,7 +5,7 @@ import { Logo } from "./logo/logo"
 export const Navbar = () => {
   return (
       <nav className="relative z-10 py-4 px-6">
-        <div className="flex justify-between items-center mx-auto">
+        <div className="flex justify-between items-center mx-auto md:none">
           <div className="flex gap-6 items-center">
             <Logo/>
             <div className="hidden md:block">

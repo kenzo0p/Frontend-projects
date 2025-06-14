@@ -4,11 +4,11 @@ interface Props {
   onToggle: () => void;
 }
 
-const CheckBox = ({ isActive, title, onToggle }: Props) => {
+export const CheckBox = ({ isActive, title, onToggle }: Props) => {
   return (
-    <li
+    <div // Changed from <li> to <div>
       onClick={onToggle}
-      className={`border py-2 px-4 bg-transparent rounded-full flex items-center gap-1 cursor-pointer hover:border-purple-400 ${
+      className={`border py-1.5 px-3 w-full bg-transparent rounded-full flex items-center gap-1 cursor-pointer hover:border-purple-400 ${
         isActive ? "border-purple-400" : ""
       }`}
     >
@@ -17,7 +17,7 @@ const CheckBox = ({ isActive, title, onToggle }: Props) => {
           type="checkbox"
           checked={isActive}
           readOnly
-          className="peer appearance-none h-4 w-4 border border-white bg-transparent rounded focus:outline-none focus:ring-0 checked:bg-purple-400 checked:border-purple-400"
+          className="peer appearance-none h-3 w-3 border border-white bg-transparent rounded focus:outline-none focus:ring-0 checked:bg-purple-400 checked:border-purple-400"
         />
         <svg
           className="hidden peer-checked:block absolute left-0 top-0 w-4 h-4 text-white pointer-events-none"
@@ -32,10 +32,8 @@ const CheckBox = ({ isActive, title, onToggle }: Props) => {
             d="M5 13l4 4L19 7"
           />
         </svg>
-        <span className="pl-1">{title}</span>
+        <span className="pl-1 text-sm whitespace-nowrap">{title}</span>
       </label>
-    </li>
+    </div>
   );
 };
-
-export default CheckBox;
